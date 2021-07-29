@@ -1,0 +1,27 @@
+.header,
+.footer {
+  height: 50px;
+}
+
+.header {
+  background-color: yellow;
+}
+
+.footer {
+  background-color: green;
+  clear: both;
+}
+
+.content {
+  background-color: pink;
+  height: 500px;
+  float: left;
+  width: 80%;
+}
+
+.sidebar {
+  background-color: gray;
+  height: 500px;
+  float: left;
+  width: 20%;
+}

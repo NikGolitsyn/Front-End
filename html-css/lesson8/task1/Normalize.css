@@ -1,0 +1,18 @@
+body {
+  background-color: antiquewhite;
+}
+.cbs {
+  box-sizing: content-box;
+  background-color: aquamarine;
+}
+.bbs {
+  box-sizing: border-box;
+  background-color: azure;
+}
+.pattern {
+  border: 8px solid black;
+  margin: 16px;
+  padding: 16px;
+  width: 512px;
+  height: 128px;
+}

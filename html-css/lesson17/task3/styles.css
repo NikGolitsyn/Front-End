@@ -1,0 +1,29 @@
+* {
+  box-sizing: border-box;
+}
+
+.table-cell {
+  text-align: center;
+  height: 50px;
+  width: 50px;
+  border: 1px solid black;
+}
+
+.chess-table {
+  margin: 16px;
+  border: 1px solid black;
+  border-collapse: collapse;
+}
+
+.table-row:last-child .table-cell,
+.table-cell:last-child,
+.table-row:first-child .table-cell,
+.table-row .table-cell:first-child {
+  border: none;
+  background-color: #fff !important;
+}
+
+.table-row:nth-child(odd) .table-cell:nth-child(even),
+.table-row:nth-child(even) .table-cell:nth-child(odd) {
+  background-color: black;
+}

@@ -1,0 +1,28 @@
+* {
+  box-sizing: border-box;
+}
+
+.main-form {
+  margin: 32px;
+}
+
+.input {
+  display: block;
+  margin: 8px;
+}
+
+.first {
+  margin-top: 9px;
+}
+
+.second {
+  margin: 12px 8px;
+}
+
+.input[name='story'] {
+  margin-bottom: 12px;
+}
+
+.input[name='learningProgress'] {
+  margin-bottom: 12px;
+}

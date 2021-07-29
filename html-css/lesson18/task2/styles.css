@@ -1,0 +1,30 @@
+.main-buttons {
+  width: 200px;
+  height: 50px;
+  margin: 64px;
+  line-height: 50px;
+  text-align: center;
+  background-color: coral;
+  color: white;
+  border-radius: 4px;
+  border: none;
+  text-transform: uppercase;
+  font-family: 'Courier New', Courier, monospace;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.main-buttons:hover {
+  color: darkcyan;
+}
+
+.svg-bird {
+  width: 32px;
+  height: 32px;
+  fill: white;
+  vertical-align: middle;
+}
+
+.svg-bird:hover {
+  fill: green;
+}

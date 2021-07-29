@@ -1,0 +1,18 @@
+.list {
+  list-style-type: none;
+  font-size: 1.5em;
+}
+
+ul > li:last-child {
+  text-decoration: underline;
+  text-decoration-color: green;
+}
+
+li:nth-last-child(2) {
+  text-decoration: line-through;
+}
+
+li:first-child {
+  text-decoration: overline;
+  text-decoration-color: red;
+}

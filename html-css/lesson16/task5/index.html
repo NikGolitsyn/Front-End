@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
+    integrity="sha256-l85OmPOjvil/SOvVt3HnSSjzF1TUMyT9eV0c2BzEGzU=" crossorigin="anonymous" />
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+  <form class="main-form">
+    <input class="input" type="text" name="primaryLanguage" value="HTML" disabled>
+    <input class="input first" type="checkbox" name="agree" unchecked>
+    <input class="input second" type="checkbox" name="like" checked readonly>
+    <input class="input" type="color" name="favouriteColor" value="#ff7f50">
+    <input class="input" type="date" name="birthDate" value="2021-01-02">
+    <input class="input" type="datetime-local" name="birthTime" value="2024-10-04T13:02">
+    <input class="input" type="email" name="email" placeholder="example@domain.com" required>
+    <input class="input" type="file" name="avatar">
+    <input class="input" type="month" name="startLearning" value="2020-01">
+    <input class="input" type="number" name="favouriteNumber" value="17">
+    <textarea class="input" name="story" cols="30" rows="5" placeholder="A long time ago..."></textarea>
+    <input class="input" type="password" name="password" value="secret">
+    <div class="languages input">
+      <input name="language" type="radio" id="html" value="html" name="front-end">
+      <label for="html">HTML</label>
+      <input name="language" type="radio" id="css" value="css" name="front-end" checked>
+      <label for="css">CSS</label>
+      <input name="language" type="radio" id="js" value="javascript" name="front-end">
+      <label for="JavaScript">JavaScript</label>
+    </div>
+    <input class="input" type="range" name="learningProgress" value="30">
+    <select class="input" name="framework">
+      <option value="react">React</option>
+      <option value="jquery" selected>jQuery</option>
+      <option value="bootstrap">Bootstrap</option>
+    </select>
+    <input class="input" type="search" name="search" placeholder="Type first letters...">
+    <input class="input" type="time" name="lunchEnd" value="14:01">
+    <input class="input" type="url" name="website" placeholder="https://website.com" required>
+    <input class="input" type="week" name="birthWeek" value="2021-W51">
+    <button class="input" type="submit">Save</button>
+  </form>
+</body>
+
+</html>
