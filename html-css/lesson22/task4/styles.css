@@ -35,6 +35,10 @@ html {
   padding: 0.5em;
 }
 
+.fa-bars {
+  font-size: 2em;
+}
+
 .nav-list-item {
   background-color: #808080;
   color: #fff;
