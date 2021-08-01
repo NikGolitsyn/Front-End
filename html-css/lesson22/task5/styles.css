@@ -1,0 +1,159 @@
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  color: #555;
+  font-size: 16px;
+}
+body {
+  display: flex;
+  flex-direction: column;
+  min-width: 100vw;
+  min-height: 100vh;
+}
+
+.header {
+  text-align: center;
+  background: linear-gradient(60deg, red, orange);
+  color: #fff;
+}
+
+.main {
+  display: flex;
+  flex-grow: 1;
+}
+
+.navigation {
+  padding: 0.5em;
+}
+
+.section {
+  font-size: 1.25em;
+
+  padding: 0.5em;
+}
+
+.units-list {
+  line-height: 1.75em;
+}
+
+.news {
+  padding: 0.5em;
+}
+
+.footer {
+  margin-bottom: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #e5e5e5;
+  padding: 0.5em;
+}
+
+.css-units {
+  color: #8b0000;
+  background-color: #e5e5e5;
+  font-size: 1.125em;
+  font-weight: 700;
+}
+
+.section__header {
+  font-size: 5vw;
+  text-align: center;
+}
+
+.nav-list {
+  padding: 0;
+  list-style-type: none;
+}
+
+.nav-list-item {
+  background-color: #808080;
+  height: 2em;
+  line-height: 2em;
+  margin-bottom: 0.5em;
+  color: #fff;
+}
+
+.nav-list-link {
+  display: block;
+  text-decoration: none;
+  color: #fff;
+  padding: 0 0.5em;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.small-pic {
+  max-width: 100%;
+  max-height: 100%;
+  display: none;
+  box-shadow: 0px 4px 8px 0px rgba(0, 0, 0, 0.2);
+}
+
+.big-pic {
+  max-height: 100%;
+  max-width: 100%;
+  display: none;
+  box-shadow: 0px 4px 8px 0px rgba(0, 0, 0, 0.2);
+}
+
+.sub-main {
+  display: flex;
+}
+
+@media screen and (min-width: 900px) {
+  .sub-main {
+    flex-basis: 800px;
+    flex-grow: 4;
+  }
+  .navigation {
+    flex-basis: 200px;
+    flex-grow: 1;
+  }
+  .section {
+    flex-basis: 600px;
+    flex-grow: 3;
+  }
+  .news {
+    flex-basis: 200px;
+    flex-grow: 1;
+  }
+  .big-pic {
+    display: flex;
+  }
+}
+
+@media screen and (max-width: 599px) {
+  .main {
+    flex-direction: column;
+  }
+  .small-pic {
+    display: flex;
+  }
+  .sub-main {
+    flex-direction: column;
+  }
+}
+
+@media screen and (min-width: 600px) and (max-width: 899px) {
+  .main {
+    flex-direction: column;
+  }
+  .sub-main {
+    display: flex;
+    width: 100%;
+  }
+  .navigation {
+    width: 20%;
+  }
+  .section {
+    width: 80%;
+  }
+  .big-pic {
+    display: flex;
+  }
+}
