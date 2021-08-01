@@ -87,17 +87,8 @@ body {
   text-overflow: ellipsis;
 }
 
-.small-pic {
+.picture {
   max-width: 100%;
-  max-height: 100%;
-  display: none;
-  box-shadow: 0px 4px 8px 0px rgba(0, 0, 0, 0.2);
-}
-
-.big-pic {
-  max-height: 100%;
-  max-width: 100%;
-  display: none;
   box-shadow: 0px 4px 8px 0px rgba(0, 0, 0, 0.2);
 }
 
@@ -122,17 +113,11 @@ body {
     flex-basis: 200px;
     flex-grow: 1;
   }
-  .big-pic {
-    display: flex;
-  }
 }
 
 @media screen and (max-width: 599px) {
   .main {
     flex-direction: column;
-  }
-  .small-pic {
-    display: flex;
   }
   .sub-main {
     flex-direction: column;
@@ -152,8 +137,5 @@ body {
   }
   .section {
     width: 80%;
-  }
-  .big-pic {
-    display: flex;
   }
 }
