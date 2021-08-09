@@ -24,11 +24,15 @@
 .menu__item_active {
   color: yellow;
 }
+.menu__item_active:hover .submenu {
+  display: block;
+}
 .menu__item:hover {
   background-color: #9acd32;
 }
 
 .submenu {
+  display: none;
   position: absolute;
   top: 3em;
   background-color: #ff7f50;

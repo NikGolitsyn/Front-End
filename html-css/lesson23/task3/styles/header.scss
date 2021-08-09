@@ -19,6 +19,11 @@
     &_active {
       color: yellow;
     }
+    &_active:hover {
+      .submenu {
+        display: block;
+      }
+    }
   }
 
   &__item:hover {
@@ -27,6 +32,7 @@
 }
 
 .submenu {
+  display: none;
   position: absolute;
   top: $unit;
   background-color: #ff7f50;
