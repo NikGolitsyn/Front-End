@@ -1,0 +1,61 @@
+$sm: 599px;
+$md: 899px;
+$lg: 1200px;
+
+@mixin for-small {
+  @media screen and (max-width: $sm) {
+    @content;
+  }
+}
+
+@mixin for-medium {
+  @media screen and (min-width: $sm + 1) {
+    @content;
+  }
+}
+
+@mixin for-large {
+  @media screen and (min-width: $md + 1) {
+    @content;
+  }
+}
+
+.main {
+  display: flex;
+  @include for-medium {
+    flex-direction: column;
+  }
+  @include for-small {
+    flex-direction: column;
+    .sub-main {
+      display: flex;
+      flex-direction: column;
+      height: 400px;
+    }
+    .navigation {
+      width: 100%;
+    }
+    .product-list {
+      width: 100%;
+    }
+  }
+  @include for-large {
+    flex-direction: row;
+    .sub-main {
+      flex-direction: row;
+      flex-basis: 200px;
+      flex-grow: 2;
+    }
+    .news {
+      flex-basis: 100px;
+      flex-grow: 1;
+    }
+  }
+}
+
+.sub-main div {
+  @include for-medium {
+    flex-basis: 100px;
+    flex-grow: 1;
+  }
+}
