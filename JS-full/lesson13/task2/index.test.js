@@ -1,4 +1,4 @@
-import getSum, { getOddNumbers, getSquare } from './fun.js';
+import getSum, { getOddNumbers, getSquare } from './calculator.js';
 
 it('Should get only odd numbers', () => {
   expect(getOddNumbers([1,2,3,4])).toEqual([1,3]);
