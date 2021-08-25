@@ -1,9 +1,9 @@
-export function getTitleElement() {
-  console.dir(document.querySelector('.title'));
-  return document.querySelector('.title');
+export function getItemsList() {
+  console.dir(document.querySelectorAll('.technology'));
+  return document.querySelectorAll('.technology');
 }
 
-export function getInputElement() {
-  console.dir(document.querySelector('input[type=text]'));
-  return document.querySelector('input[type=text]');
+export function getItemsArray() {
+  console.dir(Array.from(document.querySelectorAll('.tool')));
+  return Array.from(document.querySelectorAll('.tool'));
 }
