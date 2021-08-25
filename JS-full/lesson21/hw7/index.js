@@ -1,5 +1,5 @@
-export function createButton(buttonText) {
-  let button = document.createElement('button');
+function createButton(buttonText) {
+  const button = document.createElement('button');
   button.textContent = buttonText;
   document.querySelector('body').append(button);
 }
