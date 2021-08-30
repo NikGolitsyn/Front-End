@@ -57,6 +57,6 @@ const markAsDone = event => {
 };
 
 createBtn.addEventListener('click', createTask);
-listElem.addEventListener('change', markAsDone);
+listElem.addEventListener('click', markAsDone);
 
 renderTasks(tasks);
