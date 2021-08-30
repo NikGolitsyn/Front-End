@@ -3,7 +3,7 @@
 // 3 create 3 function (for seats, line, sectors) that will create an array with our context,
 //   (using .map for that) make a string from the array using (.join(''))
 //   and add the entire string to our arenElem (arenaElem.innerHTML = sectorsString)
-// 4 add an EventListener for parent element (arenaElem)
+// 4 add an EventListener for parent element (arenaElem) delegation proccess
 // 5 create a function for our EventListener, which will check if our event.target is seat,
 // (const isSeat = event.target.classList.contains('sector__seat'))
 
@@ -73,7 +73,7 @@ const onSeatSelect = event => {
   const { lineNumber } = event.target.closest('.sector__line').dataset;
   const { sectorNumber } = event.target.closest('.sector').dataset;
 
-  const selectedSeatElem = document.querySelector('.board');
+  const selectedSeatElem = document.querySelector('.board__selected-seat');
   selectedSeatElem.textContent = `S ${sectorNumber} - L ${lineNumber} - S ${seatNumber}`;
 };
 
