@@ -2,7 +2,7 @@
 // 2 create a fucntion to create an array for our sectors, lines, seats
 // 3 create 3 function (for seats, line, sectors) that will create an array with our context,
 //   (using .map for that) make a string from the array using (.join(''))
-//   and add the entire string to our arenElem (arenaElem.innerHTML = sectorsString)
+//   and add the entire string to our arenaElem (arenaElem.innerHTML = sectorsString)
 // 4 add an EventListener for parent element (arenaElem) delegation proccess
 // 5 create a function for our EventListener, which will check if our event.target is seat,
 // (const isSeat = event.target.classList.contains('sector__seat'))
