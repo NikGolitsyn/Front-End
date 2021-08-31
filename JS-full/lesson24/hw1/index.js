@@ -9,7 +9,7 @@
 
 export function getDiff(startDate, endDate) {
   if (startDate.getTime() === endDate.getTime()) {
-    return '0d 0h 0m 0s';
+    return `${0}d ${0}h ${0}m ${0}s`;
   }
 
   const seconds = Math.abs(startDate.getTime() - endDate.getTime()) / 1000;
