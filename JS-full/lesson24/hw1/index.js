@@ -2,6 +2,7 @@
 // output sting with difference in format (275d 2h 58m 16s)
 
 // algo
+// check if Date objects are equal
 // find amount of days
 // find amount of hours, minutes, seconds
 // with the help of reminder % we can find the remaining of seconds, minutes, hours
