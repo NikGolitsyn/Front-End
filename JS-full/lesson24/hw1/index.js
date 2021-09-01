@@ -3,8 +3,8 @@
 
 // algo
 // check if Date objects are equal
-// find amount of days
-// find amount of hours, minutes, seconds
+// count amount of days
+// count amount of hours, minutes, seconds
 // with the help of reminder % we can find the remaining of seconds, minutes, hours
 
 export function getDiff(startDate, endDate) {
@@ -13,22 +13,16 @@ export function getDiff(startDate, endDate) {
   const minutes = Math.trunc(time / (60 * 1000));
   const hours = Math.trunc(time / (60 * 60 * 1000));
   const days = Math.trunc(time / (24 * 3600 * 1000));
-
-  if ([days, hours, minutes, seconds].every(el => el > 0)) {
-    return `${days}d ${hours % days}h ${minutes % hours}m ${seconds % minutes}s`;
+  function calc(firstElem, secondElem) {
+    const result = firstElem % secondElem;
+    if (isNaN(result)) {
+      return firstElem;
+    }
+    return result;
   }
 
-  if (days === 0 && hours !== 0) {
-    return `${0}d ${hours}h ${minutes % hours}m ${seconds % minutes}s`;
-  }
-
-  if (hours=== 0 && minutes !== 0) {
-    return `${0}d ${0}h ${minutes}m ${seconds % minutes}s`;
-  }
-
-  return `${days}d ${hours}h ${minutes}m ${seconds}s`;
+  return `${days}d ${calc(hours, days)}h ${calc(minutes, hours)}m ${calc(seconds, minutes)}s`;
 }
-
 
 
 // console.log(getDiffTest(new Date(2011, 1, 2, 13, 32, 47), new Date(2001, 1, 2, 15, 34, 25)));
@@ -108,4 +102,3 @@ export function getDiff(startDate, endDate) {
 //   'years test',
 //   getDiff(new Date(2011, 1, 2, 13, 32, 47), new Date(2015, 1, 2, 13, 32, 47)),
 // );
-
