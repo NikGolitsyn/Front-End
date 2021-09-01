@@ -4,9 +4,12 @@
 export function getDiff(startDate, endDate) {
   const milliseconds = Math.abs(startDate.getTime() - endDate.getTime());
   const days = Math.floor(milliseconds / 86400000);
-  const hours = Math.abs(startDate.getHours() - endDate.getHours());
-  const minutes = Math.abs(startDate.getMinutes() - endDate.getMinutes());
-  const seconds = Math.abs(startDate.getSeconds() - endDate.getSeconds());
+  const daysRest = milliseconds / 86400000 - days;
+  const hours = Math.floor(daysRest * 24);
+  const hoursRest = daysRest * 24 - hours;
+  const minutes = Math.floor(hoursRest * 60);
+  const minutesRest = hoursRest * 60 - minutes;
+  const seconds = Math.floor(minutesRest * 60);
 
   return `${days}d ${hours}h ${minutes}m ${seconds}s`;
 }
