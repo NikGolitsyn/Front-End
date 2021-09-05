@@ -1,8 +1,8 @@
 const counterElem = document.querySelector('.counter');
 const counterValueElem = document.querySelector('.counter__value');
 
-const onCounterChange = e => {
-  const isButton = e.target.classList.contains('counter__button');
+const onCounterChange = event => {
+  const isButton = event.target.classList.contains('counter__button');
 
   if (!isButton) {
     return;
