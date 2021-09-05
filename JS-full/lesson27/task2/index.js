@@ -8,7 +8,7 @@ const onCounterChange = event => {
     return;
   }
 
-  const { action } = e.target.dataset;
+  const { action } = event.target.dataset;
 
   const oldValue = Number(counterValueElem.textContent);
 
