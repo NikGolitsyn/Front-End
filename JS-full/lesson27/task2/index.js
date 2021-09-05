@@ -9,7 +9,7 @@ const onCounterChange = event => {
     return;
   }
 
-  const { action } = event.target.dataset.action; // деструктуризация объекта в action присвоили значение action выбранной кнопки
+  const { action } = event.target.dataset;
 
   const oldValue = Number(counterValueElem.textContent); // старое значение нашего counterValueElem по умолчанию 0
 
