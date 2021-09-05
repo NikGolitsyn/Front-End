@@ -1,4 +1,4 @@
-localStorage.clear(); // удаляет все значения из хранилища / input nine / output none
+localStorage.clear(); // удаляет все значения из хранилища / input none / output none
 localStorage.setItem('hobbies', JSON.stringify({ name: 'Tomas' }));
 // setItem задаёт или обновляет значение по ключу
 // input 'name of key' 'value' / output none
