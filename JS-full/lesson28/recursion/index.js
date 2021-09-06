@@ -25,7 +25,7 @@ const tree = {
   ],
 };
 
-const markFavorites = (objTree, arrFavorites) => {
+export const markFavorites = (objTree, arrFavorites) => {
   const isFavorite = arrFavorites.includes(objTree.id);
   console.log(objTree.nodes);
   return {
