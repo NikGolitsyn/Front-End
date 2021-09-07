@@ -15,8 +15,7 @@ export const addImage = (imgSrc, callback) => {
   containerElem.append(imgElem);
 
   const onImageLoaded = () => {
-    const { width, height } = imgElem;
-    callback(null, { width, height });
+    callback(null, imgElem);
   };
 
   imgElem.addEventListener('load', onImageLoaded);
@@ -38,10 +37,10 @@ export const onImageLoaded = (error, imgElem) => {
 };
 
 // examples
-// addImage(
-//   'https://p.bigstockphoto.com/GeFvQkBbSLaMdpKXF1Zv_bigstock-Aerial-View-Of-Blue-Lakes-And--227291596.jpg',
-//   onImageLoaded,
-// );
+addImage(
+  'https://p.bigstockphoto.com/GeFvQkBbSLaMdpKXF1Zv_bigstock-Aerial-View-Of-Blue-Lakes-And--227291596.jpg',
+  onImageLoaded,
+);
 // addImage(
 //   'https://p.bigstockphoto.com/GeFvQkBbSLaMdpKXF1Zv_bigstock-Aerial-View-Of-Blue-Lakes-And--227291596',
 //   onImageLoaded,
