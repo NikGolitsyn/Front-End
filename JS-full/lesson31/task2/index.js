@@ -10,9 +10,9 @@
 export function asyncCalculator(number) {
   return new Promise(resolve => {
     setTimeout(() => {
-      console.log(`Initial valuer: ${number}`);
+      console.log(`Initial value: ${number}`);
       resolve(number);
-    }, 500);
+    }, 5000);
   })
     .then(
       value =>
@@ -21,14 +21,14 @@ export function asyncCalculator(number) {
             const result = value * value;
             console.log(`Squared value: ${result}`);
             resolve(result);
-          }, 500);
+          }, 5000);
         }),
     )
     .then(value => {
       const result = value * 2;
-      console.log(`Double value: ${result}`);
+      console.log(`Doubled value: ${result}`);
       return result;
     });
 }
 
-console.log(asyncCalculator(6));
+
