@@ -22,7 +22,7 @@ export const addImage = imgSrc => {
     };
 
     const onError = () => {
-      const error = new Error('Image load is failed');
+      const error = new Error('Image load is failed...');
       reject(error);
     };
 
