@@ -12,12 +12,11 @@ export const addImage = (imgSrc, callback) => {
   imgElem.setAttribute('alt', 'My Photo');
   imgElem.src = imgSrc;
   const containerElem = document.querySelector('.page');
+  containerElem.append(imgElem);
 
   const onImageLoaded = () => {
     callback(null, imgElem);
   };
-
-  containerElem.addEventListener('load', containerElem.append(imgElem));
 
   imgElem.addEventListener('load', onImageLoaded);
 
