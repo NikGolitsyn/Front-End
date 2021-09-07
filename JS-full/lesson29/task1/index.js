@@ -5,9 +5,9 @@
 // 1 create an img element
 // 2 set source and add it to our page
 // 3 add eventListener function after load and inside callback function call our another callback from func argument 'onImageLoaded'
-// 4 add eventListener in case of 'error' 
+// 4 add eventListener in case of 'error'
 
-const addImage = (imgSrc, callback) => {
+export const addImage = (imgSrc, callback) => {
   const imgElem = document.createElement('img');
   imgElem.setAttribute('alt', 'Photo');
   imgElem.src = imgSrc;
@@ -21,7 +21,7 @@ const addImage = (imgSrc, callback) => {
 
   imgElem.addEventListener('load', onImageLoaded);
 
-  imgElem.addEventListener('error', () => callback('This is a mistake'));
+  imgElem.addEventListener('error', () => callback('Image load is failed'));
 };
 
 // callack function
@@ -38,7 +38,15 @@ const onImageLoaded = (error, imgElem) => {
 };
 
 // examples
-addImage(
-  'https://p.bigstockphoto.com/GeFvQkBbSLaMdpKXF1Zv_bigstock-Aerial-View-Of-Blue-Lakes-And--227291596.jpg',
-  onImageLoaded,
-);
+// addImage(
+//   'https://p.bigstockphoto.com/GeFvQkBbSLaMdpKXF1Zv_bigstock-Aerial-View-Of-Blue-Lakes-And--227291596.jpg',
+//   onImageLoaded,
+// );
+// addImage(
+//   'https://p.bigstockphoto.com/GeFvQkBbSLaMdpKXF1Zv_bigstock-Aerial-View-Of-Blue-Lakes-And--227291596',
+//   onImageLoaded,
+// );
+// addImage(
+//   '',
+//   onImageLoaded,
+// );
