@@ -5,7 +5,7 @@
 // create promise
 // 1 create an img element
 // 2 set source and add it to our page
-// 3 add eventListener function after load 
+// 3 add eventListener function after load
 // 4 add eventListener in case of 'error'
 
 export const addImage = imgSrc => {
@@ -21,18 +21,23 @@ export const addImage = imgSrc => {
       resolve({ width, height });
     };
 
+    const onError = () => {
+      const error = new Error('Image load is failed');
+      reject(error);
+    };
+
     imgElem.addEventListener('load', onImageLoaded);
 
-    imgElem.addEventListener('error', () => reject(new Error('Image load is failed')));
+    imgElem.addEventListener('error', onError);
   });
   return p;
 };
 
 const imgSrc =
-  'https://p.bigstockphoto.com/GeFvQkBbSLaMdpKXF1Zv_bigstock-Aerial-View-Of-Blue-Lakes-And--227291596.jpg';
+  'https://p.bigsstockphoto.com/GeFvQkBbSLaMdpKXF1Zv_bigstock-Aerial-View-Of-Blue-Lakes-And--227291596.jpg';
 
 const resultPromise = addImage(imgSrc);
-resultPromise.then(data => console.log(data));
+// resultPromise.then(data => console.log(data));
 resultPromise.catch(error => console.log(error));
 
 // examples
