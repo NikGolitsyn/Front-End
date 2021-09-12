@@ -1,11 +1,10 @@
 import { renderTasks } from './render.js';
 import { updateTask, getTasksList, deleteTask } from './tasksGateway.js';
 
-// input event
-// output undefined
+
 export const listClickHandler = event => {
-  const isCheckbox = event.target.classList.contains('list-item__checkbox'); // применяем дилегирование к объекту 'list'
-  const isDeleteButton = event.target.classList.contains('list-item__delete-btn'); // применяем дилегирование к объекту 'list'
+  const isCheckbox = event.target.classList.contains('list-item__checkbox'); 
+  const isDeleteButton = event.target.classList.contains('list-item__delete-btn'); 
 
   if (!isCheckbox && !isDeleteButton) {
     return;
@@ -33,8 +32,3 @@ export const listClickHandler = event => {
   });
 };
 
-// 1 Prepare data
-// 2 Update data in Data base
-// 3 Read new data from server
-// 4 Save new data to front-end storage
-// 5 Update UI based on new data
