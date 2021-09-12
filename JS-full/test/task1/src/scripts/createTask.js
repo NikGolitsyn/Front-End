@@ -5,13 +5,12 @@ import { createTask } from './tasksGateway.js';
 // output undefined
 
 export const createTaskHandler = () => {
-  const inputElem = document.querySelector('.task-input'); // выбираем инпут
-  const text = inputElem.value; // переменная text содержит значение input.value
+  const inputElem = document.querySelector('.task-input'); 
+  const text = inputElem.value; 
   if (!text) {
-    // если там '' выходим из ф-и
     return;
   }
-  inputElem.value = ''; // обнуляем поле input
+  inputElem.value = ''; 
 
   const newTask = {
     text,
