@@ -2,6 +2,17 @@ import { getItem } from './storage.js';
 
 const listElem = document.querySelector('.list');
 
+const compareTasks = (a, b) => {
+  if (a.done - b.done !== 0) {
+    return a.done - b.done;
+  }
+
+  if (a.done) {
+    return new Date(b.finishDate) - new Date(a.finishDate);
+  }
+
+  return new Date(b.createDate) - new Date(a.createDate);
+};
 // В этой части 'render.js' отрисовываем элементы на странице
 
 // input object
@@ -43,6 +54,6 @@ const createListItem = ({ text, done, id }) => {
 export const renderTasks = () => {
   const tasksList = getItem('tasksList') || []; // создаём список задач, берём с хранилища 'tasksList' или пустой массив если значение null
   listElem.innerHTML = ''; // обнуляем список ul '.list'
-  const tasksElems = tasksList.sort((a, b) => a.done - b.done).map(createListItem); // создаём новый массив тасков
+  const tasksElems = tasksList.sort(compareTasks).map(createListItem); // создаём новый массив тасков
   listElem.append(...tasksElems); // c помощью spread разоврачиваем массив и добавляем все элементы в ul список 'list'
 };
