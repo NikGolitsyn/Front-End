@@ -53,10 +53,8 @@ const createListItem = ({ text, done, id }) => {
 // input none
 // output undefined
 
-export const renderTasks = () => {
-  getTasksList().then(tasksList => {
-    listElem.innerHTML = ''; // обнуляем список ul '.list'
-    const tasksElems = tasksList.sort(compareTasks).map(createListItem);
-    listElem.append(...tasksElems);
-  });
+export const renderTasks = tasksList => {
+  listElem.innerHTML = ''; // обнуляем список ul '.list'
+  const tasksElems = tasksList.sort(compareTasks).map(createListItem);
+  listElem.append(...tasksElems);
 };

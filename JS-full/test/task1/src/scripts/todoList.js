@@ -1,5 +1,5 @@
 import { createTaskHandler } from './createTask.js';
-import { listClickHandler } from './updateTasks.js';
+import { listClickHandler } from './listClickHandler.js';
 
 export const initTodoListHandler = () => {
   const createBtnElem = document.querySelector('.create-task-btn'); // выбираем кнопку создать с помощью DOM

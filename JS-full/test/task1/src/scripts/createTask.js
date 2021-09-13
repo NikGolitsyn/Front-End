@@ -1,5 +1,5 @@
 import { renderTasks } from './render.js';
-import { createTask } from './tasksGateway.js';
+import { createTask, getTasksList } from './tasksGateway.js';
 
 // input none
 // output undefined
@@ -20,7 +20,8 @@ export const createTaskHandler = () => {
   };
 
   createTask(newTask)
-    .then(() => renderTasks());
+    .then(() => getTasksList())
+    .then(tasks => renderTasks(tasks));
 };
 
 // 1. Prepare data
