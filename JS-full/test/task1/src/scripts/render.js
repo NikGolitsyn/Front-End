@@ -14,30 +14,22 @@ const compareTasks = (a, b) => {
   return new Date(b.createDate) - new Date(a.createDate);
 };
 
-// В этой части 'render.js' отрисовываем элементы на странице
-
-// input object
-// output object
-
 const createCheckbox = ({ done, id }) => {
-  // берём из объекта выбранные свойства
-  const checkboxElem = document.createElement('input'); // cоздаём input типа чекбокс
+  const checkboxElem = document.createElement('input'); 
   checkboxElem.setAttribute('type', 'checkbox');
-  checkboxElem.dataset.id = id; // в значение data-id присваиваем id
-  checkboxElem.checked = done; // в свойство checked заносим значение done
-  checkboxElem.classList.add('list-item__checkbox'); // добавляем класс
+  checkboxElem.dataset.id = id; 
+  checkboxElem.checked = done; 
+  checkboxElem.classList.add('list-item__checkbox'); 
 
   return checkboxElem;
 };
-// input object
-// output new object
+
 const createListItem = ({ text, done, id }) => {
-  // берём из объекта выбранные свойства
   const listItemElem = document.createElement('li');
-  listItemElem.classList.add('list-item', 'list__item'); // добавляем созданому элементу класс 'list__item'
-  const checkboxElem = createCheckbox({ done, id }); // создаём чекбокс
+  listItemElem.classList.add('list-item', 'list__item'); 
+  const checkboxElem = createCheckbox({ done, id }); 
   if (done) {
-    listItemElem.classList.add('list-item_done'); // если done = true добавляем элементу списка класс 'list__item_done'
+    listItemElem.classList.add('list-item_done'); 
   }
 
   const textElem = document.createElement('span');
@@ -46,12 +38,10 @@ const createListItem = ({ text, done, id }) => {
 
   const deleteBtnElem = document.createElement('button');
   deleteBtnElem.classList.add('list-item__delete-btn');
-  listItemElem.append(checkboxElem, textElem, deleteBtnElem); // добавляем в элемент списка, элемент чекбокс и текст
-  return listItemElem; // возвращаем полученый элемент
+  listItemElem.append(checkboxElem, textElem, deleteBtnElem); 
+  return listItemElem; 
 };
 
-// input none
-// output undefined
 
 export const renderTasks = tasksList => {
   listElem.innerHTML = ''; // обнуляем список ul '.list'

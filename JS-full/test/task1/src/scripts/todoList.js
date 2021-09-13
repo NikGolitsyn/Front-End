@@ -2,9 +2,9 @@ import { createTaskHandler } from './createTask.js';
 import { listClickHandler } from './listClickHandler.js';
 
 export const initTodoListHandler = () => {
-  const createBtnElem = document.querySelector('.create-task-btn'); // выбираем кнопку создать с помощью DOM
-  createBtnElem.addEventListener('click', createTaskHandler); // при клике вызываем ф-ю создать задание
+  const createBtnElem = document.querySelector('.create-task-btn'); 
+  createBtnElem.addEventListener('click', createTaskHandler);
 
-  const todoListElem = document.querySelector('.list'); // выбираем список ul
-  todoListElem.addEventListener('click', listClickHandler); // при клике на чекбокс меняем статус done
+  const todoListElem = document.querySelector('.list'); 
+  todoListElem.addEventListener('click', listClickHandler); 
 };
