@@ -9,12 +9,13 @@ const baseUrl = 'https://613e4b5094dbd600172abb49.mockapi.io/api/v1/form';
 
 const submitBtn = document.querySelector('.submit-button');
 const loginForm = document.querySelector('.login-form');
+const errorNote = document.querySelector('.error-text');
 
 const createUser = userData =>
   fetch(baseUrl, {
     method: 'POST',
     headers: {
-      'Content-Type': 'application/json;charset=utf-8',
+      'Content-Type': 'application/json;charset=utf8',
     },
     body: JSON.stringify(userData),
   });
@@ -37,6 +38,16 @@ const submitBtnHandler = event => {
       email.value = '';
       name.value = '';
       password.value = '';
+    })
+    .catch(() => {
+      errorNote.textContent = 'Failed to create user';
+      const inputChangeHandler = e => {
+        if (!e.target.classList.contains('form-input')) {
+          return;
+        }
+        errorNote.textContent = '';
+      };
+      loginForm.addEventListener('input', inputChangeHandler);
     });
 
   event.preventDefault();
