@@ -22,18 +22,13 @@ const createUser = userData =>
     body: JSON.stringify(userData),
   });
 
-const formChangeHandler = () => {
-  if (loginForm.reportValidity()) {
-    submitBtn.removeAttribute('disabled');
-  }
-};
-
-const submitBtnHandler = event => {
-  createUser({
-    email: emailElement.value,
-    userName: formNameElement.value,
-    userPassword: formPasswordElement.value,
-  })
+  
+  const submitBtnHandler = event => {
+    createUser({
+      email: emailElement.value,
+      userName: formNameElement.value,
+      userPassword: formPasswordElement.value,
+    })
     .then(data => data.json())
     .then(data => alert(JSON.stringify(data)))
     .then(() => {
@@ -41,9 +36,16 @@ const submitBtnHandler = event => {
       formNameElement.value = '';
       formPasswordElement.value = '';
     });
-  event.preventDefault();
-};
+    event.preventDefault();
+  };
+  
+  const formChangeHandler = () => {
+    if (loginForm.reportValidity()) {
+      submitBtn.removeAttribute('disabled');
+    }
+  };
 
-loginForm.addEventListener('change', formChangeHandler, false);
-
-loginForm.addEventListener('submit', submitBtnHandler);
+  loginForm.addEventListener('input', formChangeHandler, false);
+  
+  loginForm.addEventListener('submit', submitBtnHandler);
+  
