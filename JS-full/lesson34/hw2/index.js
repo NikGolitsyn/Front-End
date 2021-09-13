@@ -22,8 +22,6 @@ const createUser = userData =>
     body: JSON.stringify(userData),
   });
 
-const getUsers = () => fetch(baseUrl).then(respose => respose.json());
-
 const formChangeHandler = () => {
   if (loginForm.reportValidity()) {
     submitBtn.removeAttribute('disabled');
@@ -35,15 +33,16 @@ const submitBtnHandler = event => {
     email: emailElement.value,
     userName: formNameElement.value,
     userPassword: formPasswordElement.value,
-  }).then(data => console.log(JSON.stringify(data)));
-  // getUsers().then(data => alert(JSON.stringify(data)));
+  })
+    .then(data => data.json())
+    .then(data => alert(JSON.stringify(data)))
+    .then(() => {
+      emailElement.value = '';
+      formNameElement.value = '';
+      formPasswordElement.value = '';
+    });
   event.preventDefault();
 };
-// .then(() => {
-//     emailElement.value = '';
-//     formNameElement.value = '';
-//     formPasswordElement.value = '';
-//   });
 
 loginForm.addEventListener('change', formChangeHandler, false);
 
