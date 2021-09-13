@@ -15,7 +15,7 @@ const createUser = userData =>
   fetch(baseUrl, {
     method: 'POST',
     headers: {
-      'Content-Type': 'application/json;charset=utf8',
+      'Content-Type': 'application/json;charset=utf-8',
     },
     body: JSON.stringify(userData),
   });
