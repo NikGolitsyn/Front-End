@@ -32,12 +32,13 @@ const submitBtnHandler = event => {
 
   createUser(userData)
     .then(data => data.json())
-    .then(data => alert(JSON.stringify(data)));
+    .then(data => alert(JSON.stringify(data)))
+    .then(() => {
+      email.value = '';
+      name.value = '';
+      password.value = '';
+    });
 
-  email.value = '';
-  name.value = '';
-  password.value = '';
-  
   event.preventDefault();
 };
 
