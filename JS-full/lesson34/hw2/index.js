@@ -9,9 +9,6 @@ const baseUrl = 'https://613e4b5094dbd600172abb49.mockapi.io/api/v1/form';
 
 const submitBtn = document.querySelector('.submit-button');
 const loginForm = document.querySelector('.login-form');
-const emailElement = document.getElementById('email');
-const formNameElement = document.getElementById('name');
-const formPasswordElement = document.getElementById('password');
 
 const createUser = userData =>
   fetch(baseUrl, {
@@ -23,18 +20,24 @@ const createUser = userData =>
   });
 
 const submitBtnHandler = event => {
-  createUser({
-    email: emailElement.value,
-    userName: formNameElement.value,
-    userPassword: formPasswordElement.value,
-  })
+  const email = document.getElementById('email');
+  const name = document.getElementById('name');
+  const password = document.getElementById('password');
+
+  const userData = {
+    email: email.value,
+    name: name.value,
+    password: password.value,
+  };
+
+  createUser(userData)
     .then(data => data.json())
-    .then(data => alert(JSON.stringify(data)))
-    .then(() => {
-      emailElement.value = '';
-      formNameElement.value = '';
-      formPasswordElement.value = '';
-    });
+    .then(data => alert(JSON.stringify(data)));
+
+  email.value = '';
+  name.value = '';
+  password.value = '';
+  
   event.preventDefault();
 };
 
