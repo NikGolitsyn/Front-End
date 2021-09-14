@@ -1,4 +1,4 @@
-import { baseUrl, email, name, password, errorNote, loginForm, submitBtn } from './variables.js';
+import { baseUrl, email, name, password, errorNote, submitBtn } from './variables.js';
 
 export const createUser = userData =>
   fetch(baseUrl, {
@@ -24,5 +24,4 @@ export const createUser = userData =>
         }
         errorNote.textContent = '';
       };
-      loginForm.addEventListener('input', inputChangeHandler);
     });
