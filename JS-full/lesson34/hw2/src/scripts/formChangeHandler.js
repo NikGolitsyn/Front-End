@@ -1,6 +1,9 @@
 import { submitBtn, loginForm } from './variables.js';
 
-export const formChangeHandler = () =>
-  loginForm.reportValidity()
-    ? submitBtn.removeAttribute('disabled')
-    : submitBtn.setAttribute('disabled', 'disabled');
+export const formChangeHandler = () => {
+  if (loginForm.reportValidity()) {
+    submitBtn.disabled = false;
+  } else {
+    submitBtn.disabled = true;
+  }
+};
