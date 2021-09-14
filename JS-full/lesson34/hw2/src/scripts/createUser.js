@@ -1,4 +1,4 @@
-import { baseUrl, email, name, password, errorNote, loginForm } from './variables.js';
+import { baseUrl, email, name, password, errorNote, loginForm, submitBtn } from './variables.js';
 
 export const createUser = userData =>
   fetch(baseUrl, {
@@ -14,6 +14,7 @@ export const createUser = userData =>
       email.value = '';
       name.value = '';
       password.value = '';
+      submitBtn.setAttribute('disabled', 'disabled');
     })
     .catch(() => {
       errorNote.textContent = 'Failed to create user';
