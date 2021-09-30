@@ -1,6 +1,3 @@
-export const email = document.getElementById('email');
-export const name = document.getElementById('name');
-export const password = document.getElementById('password');
 export const submitBtn = document.querySelector('.submit-button');
 export const loginForm = document.querySelector('.login-form');
 export const errorNote = document.querySelector('.error-text');

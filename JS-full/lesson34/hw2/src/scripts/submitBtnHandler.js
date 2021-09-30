@@ -1,13 +1,9 @@
 import { createUser } from './createUser.js';
-import { email, name, password } from './variables.js';
+import { loginForm } from './variables.js';
 
 export const submitBtnHandler = event => {
-  const userData = {
-    email: email.value,
-    name: name.value,
-    password: password.value,
-  };
+  const user = Object.fromEntries(new FormData(loginForm));
 
-  createUser(userData);
+  createUser(user);
   event.preventDefault();
 };

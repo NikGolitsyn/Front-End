@@ -44,7 +44,7 @@ localStorage.setItem('amount of children', null);
 // input none
 // output object
 
-export function getLocalStorageData() {
+function getLocalStorageData() {
   return Object.entries(localStorage).reduce((acc, [key, value]) => {
     let newValue;
     try {
